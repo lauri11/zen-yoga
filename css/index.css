@@ -3,12 +3,18 @@
 :root {
     --primary-font: 'Lato';
     --secondary-font: "Open Sans";
+    --block-title-color: #343e4d;
+    --accent-color: #b940aa;
+    --brand-color: #32bbcb;
+    --footer-info-background-color: rgb(39, 47, 60);
+    --white-color: #fff;
+    --grey-text-color: #7e8a99;
+    --contact-links-grey-color: #b5b5b5;
 }
 
 * {
-    box-sizing: border-box;
-    /*margin: 0;*/
-    /*padding: 0;*/
+    margin: 0;
+    padding: 0;
 }
 
 .menu, .social-media {
@@ -16,7 +22,7 @@
 }
 
 h2 {
-    color: #343e4d;
+    color: var(--block-title-color);
     font-family: var(--primary-font, 'serif');
     font-size: 42px;
     text-align: center;
@@ -29,19 +35,19 @@ h3 {
 }
 
 .colored-dot {
-    color: #32bbcb;
+    color: var(--brand-color);
 }
 
 /*header*/
 header {
     background: url("../img/yoga_header_background.jpg") no-repeat;
     background-size: cover;
-    color: white;
+    color: var(--white-color);
     min-height: 900px;
 }
 
 .contacts-upper {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white-color);
     color: #b5b5b5;
     font-family: var(--secondary-font, 'serif');
     font-weight: bold;
@@ -49,7 +55,7 @@ header {
 }
 
 .nav-menu-link {
-    color: white;
+    color: var(--white-color);
     text-decoration: none;
     font-family: var(--secondary-font);
     font-size: 14px;
@@ -79,7 +85,7 @@ header {
 }
 
 .about {
-    color: white;
+    color: var(--white-color);
     background-size: contain;
     background: url("../img/yoga-overview-optimized.jpg") 50% 50% no-repeat;
     background-size: cover;
@@ -95,8 +101,8 @@ header {
 
 .button {
     text-decoration: none;
-    background: #32bbcb;
-    color: #fff;
+    background: var(--brand-color);
+    color: var(--white-color);;
     font-family: var(--primary-font);
     font-size: 14px;
     cursor: pointer;
@@ -106,7 +112,7 @@ header {
 }
 
 .button:hover {
-    background: #b940aa;
+    background: var(--accent-color);
 }
 
 /*classes section*/
@@ -116,14 +122,14 @@ header {
 }
 
 .classes article {
-    background: rgb(250, 251, 252);
+    background: var(--white-color);
 }
 
 .classes .quote-wrapper {
     background: url("../img/yoga_cite_background.jfif") no-repeat;
     background-size: cover;
     min-height: 300px;
-    color: white;
+    color: var(--white-color);
     text-align: center;
 }
 
@@ -139,7 +145,7 @@ header {
 }
 
 .pricing h3 {
-    color: #32bbcb;
+    color: var(--brand-color);
     font-family: var(--primary-font);
     font-size: 22px;
 }
@@ -150,7 +156,7 @@ header {
 }
 
 .price-item-name {
-    color: #7e8a99;
+    color: var(--grey-text-color);
 }
 
 .price {
@@ -159,26 +165,25 @@ header {
 
 /*contacts container*/
 .contacts {
-    color: #7e8a99;
+    color: var(--grey-text-color);
     font-family: var(--primary-font);
     font-size: 16px;
 }
 
 .contact-means, .contact-means a  {
-    color: #b5b5b5;
+    color: var(--contact-links-grey-color);
     text-decoration: underline;
 }
 
 .contact-means a {
     text-decoration: none;
     font-size: 14px;
-
 }
 
 /*feedback container*/
 .feedback {
     background: url("../img/form_background.jfif");
-    color: #7e8a99;
+    color: var(--grey-text-color);
     font-family: var(--secondary-font, 'serif');
     font-size: 16px;
 }
@@ -186,7 +191,7 @@ header {
 .feedback-form-wrapper {
     width: 35%;
     height: 90%;
-    background: white;
+    background: var(--white-color);
 }
 
 .feedback form {
@@ -202,10 +207,11 @@ header {
 
 /*footer info*/
 .info {
-    color: white;
-    background: rgb(39, 47, 60);
+    color: var(--white-color);
+    background: var(--footer-info-background-color);
 }
 
 .info h2 {
-    color: white;
+    color: var(--white-color);
 }
+
