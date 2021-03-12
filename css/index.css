@@ -57,7 +57,7 @@ header {
 
 .contacts-upper {
     background-color: var(--white-color);
-    color: #b5b5b5;
+    color: var(--contact-links-grey-color);
     font-family: var(--secondary-font, 'serif');
     font-weight: bold;
     font-size: 14px;
