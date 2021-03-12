@@ -10,11 +10,17 @@
     --white-color: #fff;
     --grey-text-color: #7e8a99;
     --contact-links-grey-color: #b5b5b5;
+    --dark-shade-color: #272f3c;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body, .header-upper {
+    max-width: 1280px;
+    margin: auto;
 }
 
 .menu, .social-media {
@@ -40,10 +46,13 @@ h3 {
 
 /*header*/
 header {
-    background: url("../img/yoga_header_background.jpg") no-repeat;
-    background-size: cover;
     color: var(--white-color);
-    min-height: 900px;
+}
+
+.header-upper {
+    position: fixed;
+    left: 0;
+    right: 0;
 }
 
 .contacts-upper {
@@ -52,6 +61,43 @@ header {
     font-family: var(--secondary-font, 'serif');
     font-weight: bold;
     font-size: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+}
+
+.contacts-upper .phone-number {
+    color: var(--contact-links-grey-color);
+    font-weight: 700;
+}
+
+.contacts-upper .social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.social-media img {
+    width: 25px;
+    height: 25px;
+}
+
+nav {
+    /* TODO: uncomment when change of color on scroll is implemented */
+    /*background: var(--dark-shade-color);*/
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    align-content: center;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 45px;
 }
 
 .nav-menu-link {
@@ -67,15 +113,61 @@ header {
     font-size: 32px;
 }
 
-.banner h1 {
-    font-family: var(--primary-font);
-    font-weight: 700;
-    font-size: 82px;
+.header-banner {
+    background: linear-gradient(90deg, rgba(17, 72, 214, 0.8) 0%, rgba(185, 64, 170, 0.8) 100%), url("../img/yoga_header_background.jpg") no-repeat;
+    background-size: cover;
+    padding: 250px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
 }
 
-.banner p {
+.banner-content {
+    position: relative;
+    top: 3.5em;
+}
+
+.header-banner h1 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.header-banner p {
     font-family: var(--secondary-font);
-    font-size: 16px;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .contacts-upper, .menu {
+        display: none
+    }
+
+    .logo {
+        font-size: 38px;
+    }
+
+    .header-banner h1 {
+        font-size: 82px;
+    }
+
+    .header-banner p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .logo {
+        font-size: 34px;
+    }
+
+    .header-banner h1 {
+        font-size: 58px;
+    }
+
+    .header-banner p {
+        font-size: 16px;
+    }
 }
 
 /*overview section*/
@@ -170,7 +262,7 @@ header {
     font-size: 16px;
 }
 
-.contact-means, .contact-means a  {
+.contact-means, .contact-means a {
     color: var(--contact-links-grey-color);
     text-decoration: underline;
 }
