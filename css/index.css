@@ -119,18 +119,18 @@ nav {
     padding: 250px 40px;
     display: flex;
     flex-direction: column;
-    min-height: 50px;
+    min-height: 200px;
 }
 
 .banner-content {
     position: relative;
-    top: 3.5em;
+    top: 9em;
 }
 
 .header-banner h1 {
     font-family: var(--primary-font);
     font-weight: 700;
-    font-size: 70px;
+    font-size: 82px;
 }
 
 .header-banner p {
