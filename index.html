@@ -3,8 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/index.css">
         <title>Zen Yoga</title>
     </head>
@@ -72,66 +70,28 @@
             </section>
             <section class="classes" id="classes">
                 <h2>Classes<span class="colored-dot">.</span></h2>
-                <div class="classes-list">
-                    <!-- Slider main container -->
-                    <div class="swiper-container">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Basics</h3>
-                                    <img src="img/yoga-basics.svg" alt="Basic Yoga">
-                                    <p>This class is designed to teach the main aspects of yoga</p>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Ashtanga Led</h3>
-                                    <img src="img/yoga-ashtanga.svg" alt="Ashtanga Yoga">
-                                    <p>This class allows students to practice the fundamentals of Ashtanga Yoga<span
-                                            class="colored-dot">.</span></p>
-                                </article >
-                            </div>
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Hatha</h3>
-                                    <img src="img/yoga-hatha.svg" alt="Hatha Yoga">
-                                    <p>This class allows students to practice the fundamentals of Ashtanga Yoga.</p>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Vinyasa</h3>
-                                    <img src="img/yoga-vinyasa.svg" alt="Vinyasa Yoga">
-                                    <p>Learn to balance your mind and body energy and to control breathing.</p>
-                                </article >
-                            </div>
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Yin</h3>
-                                    <img src="img/yoga-yin.svg" alt="Yin Yoga">
-                                    <p>Learn to balance your mind and body energy and to control breathing.</p>
-                                </article >
-                            </div>
-                            <div class="swiper-slide">
-                                <article>
-                                    <h3>Prenatal Yoga</h3>
-                                    <img src="img/yoga-prenatal.svg" alt="Prenatal Yoga">
-                                    <p></p>
-                                </article >
-                            </div>
-
-                        </div>
-<!--                         If we need pagination-->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
-<!--                        <div class="swiper-scrollbar"></div>-->
+                <div class="classes-list carousel-container">
+                    <div class="carousel-items">
+                        <div class="carousel-item active"></div>
+                        <div class="carousel-item active"></div>
+                        <div class="carousel-item active"></div>
+                        <div class="carousel-item"></div>
+                        <div class="carousel-item"></div>
+                        <div class="carousel-item"></div>
                     </div>
+                    <div class="carousel-pagination">
+                        <div class="pagination-buttons-container">
+                            <div class="pagination-button current" id=""></div>
+                            <div class="pagination-button"></div>
+                            <div class="pagination-button"></div>
+                            <div class="pagination-button"></div>
+                            <div class="pagination-button"></div>
+                            <div class="pagination-button"></div>
+                        </div>
+
+                    </div>
+                    <button class="prev"></button>
+                    <button class="next"></button>
 <!--                    <div class="quote-wrapper">-->
 <!--                        <div class="quote">Yoga is a light, which once lit, will never dim.-->
 <!--                            The better your practice, the brighter the flame.-->
@@ -265,26 +225,7 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </footer>-->
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-        <!-- Initialize Swiper -->
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                slidesPerGroup: 3,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
-        </script>
+        <script src="js/index.js"></script>
+        <script src="js/carousel.js"></script>
     </body>
 </html>
