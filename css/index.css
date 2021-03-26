@@ -626,7 +626,7 @@ nav {
     background: white;
     width: calc(100% - 100px);
     border-radius: 3px;
-    box-shadow: 0 2px 12px 0 rgb(33 67 71);
+    box-shadow: 0 2px 12px 0 rgb(33 67 71 / 30%);
     padding: 50px;
 }
 
@@ -714,7 +714,7 @@ nav {
     top: 30%;
     left: 10%;
     height: 50%;
-    box-shadow: 0 2px 12px 0 rgb(33 67 71);
+    box-shadow: 0 2px 12px 0 rgb(33 67 71 / 30%);
 }
 
 .contact-means, .contact-means a {
