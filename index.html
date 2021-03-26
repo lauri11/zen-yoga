@@ -4,6 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/index.css">
+        <script>
+            // Initialize and add the map
+            function initMap() {
+                // The location of Uluru
+                const uluru = { lat: 40.7094163259471, lng: -73.95711747024873 };
+                // The map, centered at Uluru
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 18,
+                    center: uluru,
+                });
+                // The marker, positioned at Uluru
+                const marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map,
+                });
+            }
+        </script>
         <title>Zen Yoga</title>
     </head>
     <body>
@@ -92,71 +109,97 @@
                     </div>
                     <button class="prev"></button>
                     <button class="next"></button>
-<!--                    <div class="quote-wrapper">-->
-<!--                        <div class="quote">Yoga is a light, which once lit, will never dim.-->
-<!--                            The better your practice, the brighter the flame.-->
-<!--                        </div>-->
-<!--                        <img src="img/marks.svg" alt="">-->
-<!--                        <p>B.K.S. Iyengar</p>-->
-<!--                    </div>-->
                 </div>
             </section>
-<!--            <section class="pricing" id="pricing">-->
-<!--                <h2>Pricing<span class="colored-dot">.</span></h2>-->
-<!--                <div class="membership-types-list">-->
-<!--                    <article class="membership-type">-->
-<!--                        <h3>Class Passes</h3>-->
-<!--                        <div class="prices-list">-->
-<!--                            <div class="price-item">-->
-<!--                                <p class="price-item-name">5-Class Pass</p>-->
-<!--                                <p class="price">$70</p>-->
-<!--                            </div>-->
-<!--                            <div class="price-item">-->
-<!--                                <p class="price-item-name">10-Class Pass</p>-->
-<!--                                <p class="price">$125</p>-->
-<!--                            </div>-->
-<!--                            <div class="price-item">-->
-<!--                                <p class="price-item-name">Private Lesson</p>-->
-<!--                                <p class="price">$50</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </article>-->
-<!--                    <article class="membership-type central">-->
-<!--                        <h3>Monthly Membership</h3>-->
-<!--                        <div class="prices-list">-->
-<!--                            <div class="prices-list">-->
-<!--                                <div class="price-item">-->
-<!--                                    <p class="price-item-name">Unlimited Monthly Membership</p>-->
-<!--                                    <p class="price">$120</p>-->
-<!--                                </div>-->
-<!--                                <div class="price-item">-->
-<!--                                    <p class="price-item-name">6-Month Unlimited Membership</p>-->
-<!--                                    <p class="price">$600</p>-->
-<!--                                </div>-->
-<!--                                <div class="price-item">-->
-<!--                                    <p class="price-item-name">3-Month Membership</p>-->
-<!--                                    <p class="price">$350</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </article>-->
-<!--                    <article class="membership-type">-->
-<!--                        <h3>Annual Membership</h3>-->
-<!--                        <p class="price-item-name">Get access to our gym all the year around!</p>-->
-<!--                        <div class="prices-list">-->
-<!--                            <div class="price-item">-->
-<!--                                <p class="price-item-name">1-Year Unlimited Membership</p>-->
-<!--                                <p class="price">$1000</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </article>-->
-<!--                </div>-->
-<!--            </section>-->
+            <div class="quote">
+                <div class="quote-container">
+                    <div class="quote-text">
+                        <p>
+                            Yoga is a light, which once lit, will never dim.
+                        </p>
+                        <p>
+                            The better your practice, the brighter the flame.
+                        </p>
+                    </div>
+                    <div class="quote-image">
+                        <img src="img/marks.svg" alt="">
+                    </div>
+                </div>
+                <div class="author">
+                    <p>B.K.S. Iyengar</p>
+                </div>
+            </div>
+
+            <section class="pricing" id="pricing">
+                <h2>Pricing<span class="colored-dot">.</span></h2>
+                <div class="membership-types-list">
+                    <article class="membership-type">
+                        <h3>Class Passes</h3>
+                        <div class="prices-list">
+                            <div class="price-item">
+                                <p class="price-item-name">5-Class Pass</p>
+                                <p class="price">$70</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">10-Class Pass</p>
+                                <p class="price">$125</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">Private Lesson</p>
+                                <p class="price">$50</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="membership-type central">
+                        <h3>Monthly Membership</h3>
+                        <div class="prices-list">
+                            <div class="price-item">
+                                <p class="price-item-name">Unlimited Monthly Membership</p>
+                                <p class="price">$120</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">6-Month Unlimited Membership</p>
+                                <p class="price">$600</p>
+                            </div>
+                            <div class="price-item">
+                                <p class="price-item-name">3-Month Membership</p>
+                                <p class="price">$350</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="membership-type">
+                        <h3>Annual Membership</h3>
+                        <p class="price-item-name">Get access to our gym all the year around!</p>
+                        <div class="prices-list">
+                            <div class="price-item">
+                                <p class="price-item-name">1-Year Unlimited Membership</p>
+                                <p class="price">$1000</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="get-started">
+                    <div class="get-started-content">
+                        <div class="get-started-text">
+                            <p class="interested-in-class">
+                                Interested in any class?
+                            </p>
+                            <p>
+                                Get started in selected time guided by the best professional teachers
+                            </p>
+                        </div>
+                        <a>
+                            <div class="button">
+                                Start yoga today
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </main>
 <!--        <footer>-->
 <!--            <div class="contacts" id="contacts">-->
-<!--                &lt;!&ndash;Update once map is added-->
-<!--                <iframe src=""></iframe>&ndash;&gt;-->
+<!--                <div id="map"></div>-->
 <!--                <div class="contacts-card">-->
 <!--                    <h2>New York</h2>-->
 <!--                    <div class="address">-->
@@ -227,5 +270,8 @@
 <!--        </footer>-->
         <script src="js/index.js"></script>
         <script src="js/carousel.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHvFixorCRJwp_pyg3X9KwyGnex6JGZRU&callback=initMap&libraries=&v=weekly"
+                async
+        ></script>
     </body>
 </html>
