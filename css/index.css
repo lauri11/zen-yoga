@@ -83,7 +83,9 @@ header {
 }
 
 .contacts-upper .social-media,
-.mobile-menu-wrap .social-media {
+.contacts-card .social-media,
+.mobile-menu-wrap .social-media,
+footer .social-media {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
@@ -270,66 +272,72 @@ nav {
     font-size: 14px;
 }
 
-@media (max-width: 1024px) {
-    nav {
-        background: var(--dark-shade-color);
-    }
+/*@media screen and (max-width: 1024px) {*/
+/*    nav {*/
+/*        background: var(--dark-shade-color);*/
+/*    }*/
 
-    .contacts-upper, .menu {
-        display: none
-    }
+/*    .contacts-upper, .menu {*/
+/*        display: none*/
+/*    }*/
 
-    .logo {
-        font-size: 38px;
-    }
+/*    .logo {*/
+/*        font-size: 34px;*/
+/*    }*/
 
-    .hamburger-icon {
-        display: flex;
-    }
+/*    .hamburger-icon {*/
+/*        display: flex;*/
+/*    }*/
 
-    .header-banner h1 {
-        font-size: 82px;
-    }
+/*    .header-banner h1 {*/
+/*        font-size: 82px;*/
+/*    }*/
 
-    .header-banner p {
-        font-size: 16px;
-    }
-}
+/*    .header-banner p {*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .logo {
-        font-size: 34px;
-    }
+/*@media screen and (min-width: 481px) and (max-width: 768px) {*/
+/*    .logo {*/
+/*        font-size: 34px;*/
+/*    }*/
 
-    .header-banner h1 {
-        font-size: 58px;
-    }
+/*    .header-banner h1 {*/
+/*        font-size: 58px;*/
+/*    }*/
 
-    .header-banner p {
-        font-size: 16px;
-    }
+/*    .header-banner p {*/
+/*        font-size: 16px;*/
+/*    }*/
 
-    #pricing .membership-types-list {
-        flex-direction: column;
-        margin-left: 30px;
-        margin-right: 30px;
-        margin-bottom: 30px;
-        padding: 0;
-    }
+/*    #pricing .membership-types-list {*/
+/*        flex-direction: column;*/
+/*        margin-left: 30px;*/
+/*        margin-right: 30px;*/
+/*        margin-bottom: 30px;*/
+/*        padding: 0;*/
+/*    }*/
 
-    .pricing .membership-types-list .membership-type {
-        height: 300px;
-        margin: 0 0 30px;
-    }
+/*    .pricing .membership-types-list .membership-type {*/
+/*        height: 300px;*/
+/*        margin: 0 0 30px;*/
+/*    }*/
 
-    .quote .quote-container {
-        width: 80%;
-    }
+/*    .quote .quote-container {*/
+/*        width: 80%;*/
+/*    }*/
 
-    .quote .quote-text {
-        font-size: 22px;
-    }
-}
+/*    .quote .quote-text {*/
+/*        font-size: 22px;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 320px) and (max-width: 480px) {*/
+/*    .logo {*/
+/*        font-size: 38px;*/
+/*    }*/
+/*}*/
 
 /*sections*/
 .overview,
@@ -615,9 +623,14 @@ nav {
     padding-top: 100px;
 }
 
+.pricing h3,
+.pricing .price-item {
+    margin-bottom: 20px;
+}
+
 .pricing .membership-types-list {
+    text-align: center;
     display: flex;
-    justify-content: center;
     padding: 0 50px 100px;
     margin-top: 60px;
 }
@@ -671,33 +684,50 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 50px;
-    padding-left: 50px;
+    font-size: 16px;
 }
 
 .get-started-content {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .get-started-content .interested-in-class {
+    margin-bottom: 15px;
     font-family: var(--primary-font);
     font-size: 38px;
 }
 
-.get-started-content {
-    font-size: 16px;
-}
-
 .get-started-content a {
     font-size: 15px;
-    width: 190px;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
 }
 
 /*contacts container*/
+.contacts .contacts-card {
+    width: 40%;
+    height: 60%;
+    top: 20%;
+    left: 3%;
+    background: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgb(33 67 71 / 30%);
+    text-align: center;
+}
+
 #map {
     width: 100%;
-    height: 600px;
+    height: 800px;
     filter: grayscale(100%);
 }
 
@@ -708,13 +738,13 @@ nav {
     position: relative;
 }
 
-.contacts .contacts-card {
-    position: absolute;
-    background: white;
-    top: 30%;
-    left: 10%;
-    height: 50%;
-    box-shadow: 0 2px 12px 0 rgb(33 67 71 / 30%);
+.contacts-card .social-media {
+    grid-gap: 30px;
+}
+
+.contacts-card .social-media img {
+    width: 32px;
+    height: 32px;
 }
 
 .contact-means, .contact-means a {
@@ -729,35 +759,215 @@ nav {
 
 /*feedback container*/
 .feedback {
-    background: url("../img/form_background.jfif");
+    background: linear-gradient(40deg, rgba(17, 72, 214, 0.8) 0%, rgba(185, 64, 170, 0.8) 100%), url("../img/form_background.jfif") 45% 24%;
+    height: 1000px;
     color: var(--secondary-text-color);
     font-family: var(--secondary-font, 'serif');
     font-size: 16px;
+    position: relative;
+    text-align: center;
 }
 
 .feedback-form-wrapper {
-    width: 35%;
-    height: 90%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 45%;
+    height: 80%;
+    right: 6%;
+    top: 10%;
+    padding: 60px;
     background: var(--main-text-color);
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgb(33 67 71 / 8%);
 }
 
 .feedback form {
-    width: 100%;
-    margin: auto;
+    margin-top: 30px;
     font-size: 14px;
 }
 
-.feedback form input, textarea {
+.feedback-form-wrapper p {
+    margin-top: 30px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px 40px;
+    margin-bottom: 25px;
     border: none;
     background: rgba(39, 47, 60, 0.12);
 }
 
+.feedback form textarea {
+    resize: none;
+}
+
+.feedback-form-wrapper form input[type="submit"] {
+    margin-top: 45px;
+    color: var(--main-text-color);
+    background-color: var(--brand-color);
+}
+
 /*footer info*/
+.info-wrapper {
+    color: var(--main-text-color);
+    background: var(--footer-info-background-color);
+    padding: 5% 5% 3%;
+    font-family: var(--secondary-font);
+}
+
 .info {
     color: var(--main-text-color);
     background: var(--footer-info-background-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
 }
 
-.info h2 {
-    color: var(--main-text-color);
+.info .short-info {
+    font-family: var(--primary-font);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.info nav {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.info nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100%;
+    padding: 0;
+    margin-left: 20%;
+}
+
+footer .social {
+    /*text-align: center;*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social h3 {
+    margin-bottom: 10%;
+}
+
+.info-wrapper .copyright {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-wrapper .copyright {
+    font-weight: 700;
+    font-family: var(--primary-font);
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        background: var(--dark-shade-color);
+    }
+
+    .contacts-upper, .menu {
+        display: none
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .hamburger-icon {
+        display: flex;
+    }
+
+    .header-banner h1 {
+        font-size: 82px;
+    }
+
+    .header-banner p {
+        font-size: 16px;
+    }
+
+    .membership-type.central {
+        padding: 50px;
+    }
+
+    .contacts .contacts-card {
+        position: static;
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 922px) {
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .logo {
+        font-size: 34px;
+    }
+
+    .header-banner h1 {
+        font-size: 58px;
+    }
+
+    .header-banner p {
+        font-size: 16px;
+    }
+
+    /*#pricing .membership-types-list {*/
+    /*    flex-direction: column;*/
+    /*    margin-left: 30px;*/
+    /*    margin-right: 30px;*/
+    /*    margin-bottom: 30px;*/
+    /*    padding: 0;*/
+    /*}*/
+    .pricing .membership-types-list .membership-type {
+        height: 300px;
+        margin: 0 0 30px;
+    }
+
+    .quote .quote-container {
+        width: 80%;
+    }
+
+    .quote .quote-text {
+        font-size: 22px;
+    }
+
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .logo {
+        font-size: 38px;
+    }
+
+    .get-started-content {
+
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #pricing .membership-types-list {
+        flex-direction: column;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .feedback-form-wrapper {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        right: 0;
+    }
 }

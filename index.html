@@ -7,9 +7,7 @@
         <script>
             // Initialize and add the map
             function initMap() {
-                // The location of Uluru
                 const uluru = { lat: 40.7094163259471, lng: -73.95711747024873 };
-                // The map, centered at Uluru
                 const map = new google.maps.Map(document.getElementById("map"), {
                     zoom: 18,
                     center: uluru,
@@ -138,15 +136,15 @@
                         <div class="prices-list">
                             <div class="price-item">
                                 <p class="price-item-name">5-Class Pass</p>
-                                <p class="price">$70</p>
+                                <p class="price" data-item-type="five-classes">$70</p>
                             </div>
                             <div class="price-item">
                                 <p class="price-item-name">10-Class Pass</p>
-                                <p class="price">$125</p>
+                                <p class="price" data-item-type="ten-classes">$125</p>
                             </div>
                             <div class="price-item">
                                 <p class="price-item-name">Private Lesson</p>
-                                <p class="price">$50</p>
+                                <p class="price" data-item-type="private-class">$50</p>
                             </div>
                         </div>
                     </article>
@@ -155,25 +153,28 @@
                         <div class="prices-list">
                             <div class="price-item">
                                 <p class="price-item-name">Unlimited Monthly Membership</p>
-                                <p class="price">$120</p>
+                                <p class="price" data-item-type="one-month-unlimited">$120</p>
                             </div>
                             <div class="price-item">
                                 <p class="price-item-name">6-Month Unlimited Membership</p>
-                                <p class="price">$600</p>
+                                <p class="price" data-item-type="6-month-unlimited">$600</p>
                             </div>
                             <div class="price-item">
                                 <p class="price-item-name">3-Month Membership</p>
-                                <p class="price">$350</p>
+                                <p class="price" data-item-type="three-month">$350</p>
                             </div>
                         </div>
                     </article>
                     <article class="membership-type">
                         <h3>Annual Membership</h3>
-                        <p class="price-item-name">Get access to our gym all the year around!</p>
                         <div class="prices-list">
                             <div class="price-item">
+                                <p class="price-item-name">Get access to our gym all the year around!</p>
+                                <p class="price"></p>
+                            </div>
+                            <div class="price-item">
                                 <p class="price-item-name">1-Year Unlimited Membership</p>
-                                <p class="price">$1000</p>
+                                <p class="price" data-item-type="one-year-unlimited">$1000</p>
                             </div>
                         </div>
                     </article>
@@ -188,87 +189,97 @@
                                 Get started in selected time guided by the best professional teachers
                             </p>
                         </div>
-                        <a>
-                            <div class="button">
+                        <a class="button">
                                 Start yoga today
-                            </div>
                         </a>
                     </div>
                 </div>
             </section>
         </main>
-<!--        <footer>-->
-<!--            <div class="contacts" id="contacts">-->
-<!--                <div id="map"></div>-->
-<!--                <div class="contacts-card">-->
-<!--                    <h2>New York</h2>-->
-<!--                    <div class="address">-->
-<!--                        <p>8108 Vada Estates</p>-->
-<!--                        <p>Brooklyn, NY 11211</p>-->
-<!--                    </div>-->
-<!--                    <div class="working-hours">-->
-<!--                        <p>Monday - Sunday:</p>-->
-<!--                        <p>6 am - 11 pm</p>-->
-<!--                    </div>-->
-<!--                    <div class="contact-means">-->
-<!--                        <p>+1 (234) 567 89 00</p>-->
-<!--                        <a href="mailto:zenyoga@email.com">zenyoga@email.com</a>-->
-<!--                    </div>-->
-<!--                    <ul class="social-media">-->
-<!--                        <li><a href=""><img src="img/facebook-icon.svg" alt="facebook"></a></li>-->
-<!--                        <li><a href=""><img src="img/twitter-icon.svg" alt="twitter"></a></li>-->
-<!--                        <li><a href=""><img src="img/instagram-icon.svg" alt="instagram"></a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="feedback">-->
-<!--                <div class="feedback-form-wrapper">-->
-<!--                    <h2>Need Guidance?</h2>-->
-<!--                    <p>We will answer all your questions with great pleasure!</p>-->
-<!--                    <form>-->
-<!--                        <input type="text" name="name" required placeholder="Name*">-->
-<!--                        <br>-->
-<!--                        <input type="tel" name="phone-number" required placeholder="Phone number*">-->
-<!--                        <br>-->
-<!--                        <input type="email" name="email" required placeholder="Email*">-->
-<!--                        <br>-->
-<!--                        <textarea name="message" id="message-box" cols="30" rows="10" placeholder="Message"></textarea>-->
-<!--                        <br>-->
-<!--                        <input type="submit" value="Send message">-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="info">-->
-<!--                <div class="short-info">-->
-<!--                    <h2>ZEN Yoga</h2>-->
-<!--                    <p>Join ZEN Yoga Studio and we will offer you a great variety of yoga classes meeting your individual-->
-<!--                        needs and-->
-<!--                        your busy schedule.</p>-->
-<!--                </div>-->
-<!--                <nav>-->
-<!--                    <ul class="menu">-->
-<!--                        <li><a href="#overview" class="nav-menu-link upper">About</a></li>-->
-<!--                        <li><a href="#classes" class="nav-menu-link upper">Classes</a></li>-->
-<!--                        <li><a href="#pricing" class="nav-menu-link upper">Pricing</a></li>-->
-<!--                        <li><a href="#contacts" class="nav-menu-link upper">Contacts</a></li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
-<!--                <div class="social">-->
-<!--                    <ul class="social-media">-->
-<!--                        <li><a href=""><img src="img/facebook-white.svg" alt="facebook"></a></li>-->
-<!--                        <li><a href=""><img src="img/instagram-white.svg" alt="twitter"></a></li>-->
-<!--                        <li><a href=""><img src="img/youtube-white.svg" alt="instagram"></a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="created-by">-->
-<!--                    <p>&#169; Created by</p>-->
-<!--                </div>-->
-<!--                <div class="rights">-->
-<!--                    <p>All rights Reserved</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
+        <footer>
+            <div class="contacts" id="contacts">
+                <div id="map"></div>
+                <div class="contacts-card">
+                    <h2>New York</h2>
+                    <div class="address">
+                        <p>8108 Vada Estates</p>
+                        <p>Brooklyn, NY 11211</p>
+                    </div>
+                    <div class="working-hours">
+                        <p>Monday - Sunday:</p>
+                        <p>6 am - 11 pm</p>
+                    </div>
+                    <div class="contact-means phone">
+                        <p>+1 (234) 567 89 00</p>
+                    </div>
+                    <div class="contact-means email">
+                        <a href="mailto:zenyoga@email.com">zenyoga@email.com</a>
+                    </div>
+                    <ul class="social-media">
+                        <li><a href=""><img src="img/facebook-icon.svg" alt="facebook"></a></li>
+                        <li><a href=""><img src="img/twitter-icon.svg" alt="twitter"></a></li>
+                        <li><a href=""><img src="img/instagram-icon.svg" alt="instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="feedback-form-wrapper">
+                    <h2>Need Guidance?</h2>
+                    <p>We will answer all your questions with great pleasure!</p>
+                    <form>
+                        <label for="">
+                            <input type="text" name="name" required placeholder="Name*">
+                        </label>
+                        <label for="">
+                            <input type="tel" name="phone-number" required placeholder="Phone number*">
+                        </label>
+                        <label for="">
+                            <input type="email" name="email" required placeholder="Email*">
+                        </label>
+                        <label for="">
+                            <textarea name="message" id="message-box" cols="30" rows="10" placeholder="Message"></textarea>
+                        </label>
+                        <input type="submit" value="Send message">
+                    </form>
+                </div>
+            </div>
+            <div class="info-wrapper">
+                <div class="info">
+                    <div class="short-info">
+                        <h3>ZEN Yoga</h3>
+                        <p>Join ZEN Yoga Studio and we will offer you a great variety of yoga classes meeting your individual
+                            needs and
+                            your busy schedule.</p>
+                    </div>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="#overview" class="nav-menu-link upper">About</a></li>
+                            <li><a href="#classes" class="nav-menu-link upper">Classes</a></li>
+                            <li><a href="#pricing" class="nav-menu-link upper">Pricing</a></li>
+                            <li><a href="#contacts" class="nav-menu-link upper">Contacts</a></li>
+                        </ul>
+                    </nav>
+                    <div class="social">
+                        <h3>Follow Us</h3>
+                        <ul class="social-media">
+                            <li><a href=""><img src="img/facebook-white.svg" alt="facebook"></a></li>
+                            <li><a href=""><img src="img/instagram-white.svg" alt="twitter"></a></li>
+                            <li><a href=""><img src="img/youtube-white.svg" alt="instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="created-by">
+                        <p>&#169; Created by</p>
+                    </div>
+                    <div class="rights">
+                        <p>All rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="js/index.js"></script>
+        <script src="js/membership-prices.js"></script>
         <script src="js/carousel.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHvFixorCRJwp_pyg3X9KwyGnex6JGZRU&callback=initMap&libraries=&v=weekly"
                 async
