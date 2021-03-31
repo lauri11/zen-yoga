@@ -37,34 +37,91 @@ const carouselItemsData = [
     }
 ];
 
-const carouselItems = document.querySelectorAll('.carousel-item');
-if (carouselItems.length === carouselItemsData.length) {
-    carouselItemsData.forEach((carouselItemData, index) => {
-        carouselItems[index].innerHTML += `
+const carouselItems = document.querySelectorAll('.carousel-container .carousel-item');
+const carouselItemsTablet = document.querySelectorAll('.carousel-container-tablet .carousel-item');
+const carouselItemsMobile = document.querySelectorAll('.carousel-container-mobile .carousel-item');
+// if (carouselItems.length === carouselItemsData.length) {
+
+carouselItemsData.forEach((carouselItemData, index) => {
+    carouselItems[index].innerHTML += `
             <article>
                 <img src="img/${carouselItemData.img}" alt="${carouselItemData.alt}">
                 <h3>${carouselItemData.title}</h3>
                 <p>${carouselItemData.description}</p>
             </article>
         `;
-    });
-}
+});
+
+carouselItemsData.forEach((carouselItemData, index) => {
+    carouselItemsTablet[index].innerHTML += `
+            <article>
+                <img src="img/${carouselItemData.img}" alt="${carouselItemData.alt}">
+                <h3>${carouselItemData.title}</h3>
+                <p>${carouselItemData.description}</p>
+            </article>
+        `;
+});
+
+carouselItemsData.forEach((carouselItemData, index) => {
+    carouselItemsMobile[index].innerHTML += `
+            <article>
+                <img src="img/${carouselItemData.img}" alt="${carouselItemData.alt}">
+                <h3>${carouselItemData.title}</h3>
+                <p>${carouselItemData.description}</p>
+            </article>
+        `;
+});
 
 
-const nextIcon = document.querySelector('.next');
-nextIcon.addEventListener('click', showNext);
+// const nextIcon = document.querySelector('.next');
+// nextIcon.addEventListener('click', showNext);
+//
+// const previousIcon = document.querySelector('.prev');
+// previousIcon.addEventListener('click', showPrevious);
 
-const previousIcon = document.querySelector('.prev');
-previousIcon.addEventListener('click', showPrevious);
+const nextIcon = document.querySelectorAll('.next');
+nextIcon.forEach(icon => icon.addEventListener('click', showNext));
+// nextIcon.addEventListener('click', showNext);
+
+const previousIcon = document.querySelectorAll('.prev');
+previousIcon.forEach(icon => icon.addEventListener('click', showPrevious));
+
 
 let currentIndex = 0;
 
 function showNext() {
-    let activeElements = document.querySelectorAll('.carousel-item.active');
-    let hiddenElements = document.querySelectorAll('.carousel-item:not(.active)');
-    const container = document.querySelector('.carousel-items');
-    const allElement = document.querySelectorAll('.carousel-item');
-    const paginationElements = document.querySelectorAll('.pagination-button');
+    let activeElements;
+    let hiddenElements;
+    let container;
+    let allElement;
+    let paginationElements;
+
+    if (window.getComputedStyle(document.querySelector('.carousel-container-tablet')).getPropertyValue('display') !== 'none') {
+        activeElements = document.querySelectorAll('.carousel-container-tablet .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container-tablet .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container-tablet .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container-tablet .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container-tablet .pagination-button');
+    }else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
+        activeElements = document.querySelectorAll('.carousel-container-mobile .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container-mobile .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container-mobile .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container-mobile .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container-mobile .pagination-button');
+    } else {
+        activeElements = document.querySelectorAll('.carousel-container .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container .pagination-button');
+    }
+
+    // const container = document.querySelector('.carousel-items');
+    // const allElement = document.querySelectorAll('.carousel-item');
+    // const paginationElements = document.querySelectorAll('.pagination-button');
 
     let firstActive = activeElements[0];
     paginationElements[currentIndex].classList.remove('current');
@@ -79,11 +136,40 @@ function showNext() {
 }
 
 function showPrevious() {
-    let activeElements = document.querySelectorAll('.carousel-item.active');
-    let hiddenElements = document.querySelectorAll('.carousel-item:not(.active)');
-    const container = document.querySelector('.carousel-items');
-    const allElement = document.querySelectorAll('.carousel-item');
-    const paginationElements = document.querySelectorAll('.pagination-button');
+    let activeElements;
+    let hiddenElements;
+    let container;
+    let allElement;
+    let paginationElements;
+
+    // let activeElements = document.querySelectorAll('.carousel-item.active');
+    // let hiddenElements = document.querySelectorAll('.carousel-item:not(.active)');
+    // const container = document.querySelector('.carousel-items');
+    // const allElement = document.querySelectorAll('.carousel-item');
+
+
+    if (window.getComputedStyle(document.querySelector('.carousel-container-tablet')).getPropertyValue('display') !== 'none') {
+        activeElements = document.querySelectorAll('.carousel-container-tablet .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container-tablet .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container-tablet .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container-tablet .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container-tablet .pagination-button');
+    }else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
+        activeElements = document.querySelectorAll('.carousel-container-mobile .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container-mobile .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container-mobile .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container-mobile .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container-mobile .pagination-button');
+    } else {
+        activeElements = document.querySelectorAll('.carousel-container .carousel-item.active');
+        hiddenElements = document.querySelectorAll('.carousel-container .carousel-item:not(.active)');
+
+        container = document.querySelector('.carousel-container .carousel-items');
+        allElement = document.querySelectorAll('.carousel-container .carousel-item');
+        paginationElements = document.querySelectorAll('.carousel-container .pagination-button');
+    }
 
     let lastHidden = hiddenElements[hiddenElements.length - 1];
     lastHidden.classList.add('active');

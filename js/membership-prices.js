@@ -29,29 +29,42 @@ const pricesTypes = [
     }
 ];
 
+const signs = {
+    'USD': '$',
+    'UAH': '&#8372;',
+    'EUR': '&#8364;'
+};
+
 const apiKey = '4de0ccb964ee2ee37b6131cd';
 let url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest`;
 
+const baseCurrency = 'USD';
+
 async function fetchRatesForCurrency(currency) {
-    let headers = new Headers({
-        '': ''
-    });
-    const response = await fetch('https://v6.exchangerate-api.com/v6/4de0ccb964ee2ee37b6131cd/latest/USD', );
-    // const response = await fetch(`${url}/${currency.toUpperCase()}`);
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/4de0ccb964ee2ee37b6131cd/latest/${currency}`,);
     const data = await response.json();
     console.log(data);
     return data;
 }
 
-const selectElement = document.querySelector('#currency-select');
-selectElement.addEventListener('change', updatePrices);
+const buttonElements = document.querySelectorAll('.pricing .currency-change button');
+buttonElements.forEach(element => {
+    element.addEventListener('click', changeStyles);
+    element.addEventListener('click', updatePrices);
+});
 
-async function updatePrices() {
-    const selectedCurrency = selectElement.value;
-    const rates = await fetchRatesForCurrency(selectedCurrency);
+async function updatePrices(event) {
+    const selectedCurrency = event.target.value;
+    const rates = await fetchRatesForCurrency(baseCurrency);
+    const sign = signs[selectedCurrency];
     pricesTypes.forEach(priceItem => {
-        const newPrice = priceItem * rates.rates[selectedCurrency];
+        const newPrice = Math.round(priceItem.value * rates['conversion_rates'][selectedCurrency.toUpperCase()]);
         document.querySelector(`[data-item-type="${priceItem['data-item-type']}"]`)
-            .innerHTML = newPrice.toString();
+            .innerHTML = `${sign}${newPrice}`;
     });
+}
+
+function changeStyles(event) {
+    document.querySelector('.pricing .currency-change button.active').classList.remove('active');
+    event.target.classList.add('active');
 }

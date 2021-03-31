@@ -12,4 +12,9 @@ function changeNavigationStyleOnScroll() {
     }
 }
 
+const mobileMenu = document.querySelector('.mobile-menu-wrap ul');
+mobileMenu.addEventListener('click', (e) => {
+    document.querySelector('#menu-toggle-checkbox').checked = false;
+});
+
 window.addEventListener('scroll', changeNavigationStyleOnScroll);
