@@ -40,7 +40,6 @@ const carouselItemsData = [
 const carouselItems = document.querySelectorAll('.carousel-container .carousel-item');
 const carouselItemsTablet = document.querySelectorAll('.carousel-container-tablet .carousel-item');
 const carouselItemsMobile = document.querySelectorAll('.carousel-container-mobile .carousel-item');
-// if (carouselItems.length === carouselItemsData.length) {
 
 carouselItemsData.forEach((carouselItemData, index) => {
     carouselItems[index].innerHTML += `
@@ -72,20 +71,11 @@ carouselItemsData.forEach((carouselItemData, index) => {
         `;
 });
 
-
-// const nextIcon = document.querySelector('.next');
-// nextIcon.addEventListener('click', showNext);
-//
-// const previousIcon = document.querySelector('.prev');
-// previousIcon.addEventListener('click', showPrevious);
-
 const nextIcon = document.querySelectorAll('.next');
 nextIcon.forEach(icon => icon.addEventListener('click', showNext));
-// nextIcon.addEventListener('click', showNext);
 
 const previousIcon = document.querySelectorAll('.prev');
 previousIcon.forEach(icon => icon.addEventListener('click', showPrevious));
-
 
 let currentIndex = 0;
 
@@ -103,7 +93,7 @@ function showNext() {
         container = document.querySelector('.carousel-container-tablet .carousel-items');
         allElement = document.querySelectorAll('.carousel-container-tablet .carousel-item');
         paginationElements = document.querySelectorAll('.carousel-container-tablet .pagination-button');
-    }else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
+    } else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
         activeElements = document.querySelectorAll('.carousel-container-mobile .carousel-item.active');
         hiddenElements = document.querySelectorAll('.carousel-container-mobile .carousel-item:not(.active)');
 
@@ -118,10 +108,6 @@ function showNext() {
         allElement = document.querySelectorAll('.carousel-container .carousel-item');
         paginationElements = document.querySelectorAll('.carousel-container .pagination-button');
     }
-
-    // const container = document.querySelector('.carousel-items');
-    // const allElement = document.querySelectorAll('.carousel-item');
-    // const paginationElements = document.querySelectorAll('.pagination-button');
 
     let firstActive = activeElements[0];
     paginationElements[currentIndex].classList.remove('current');
@@ -142,12 +128,6 @@ function showPrevious() {
     let allElement;
     let paginationElements;
 
-    // let activeElements = document.querySelectorAll('.carousel-item.active');
-    // let hiddenElements = document.querySelectorAll('.carousel-item:not(.active)');
-    // const container = document.querySelector('.carousel-items');
-    // const allElement = document.querySelectorAll('.carousel-item');
-
-
     if (window.getComputedStyle(document.querySelector('.carousel-container-tablet')).getPropertyValue('display') !== 'none') {
         activeElements = document.querySelectorAll('.carousel-container-tablet .carousel-item.active');
         hiddenElements = document.querySelectorAll('.carousel-container-tablet .carousel-item:not(.active)');
@@ -155,7 +135,7 @@ function showPrevious() {
         container = document.querySelector('.carousel-container-tablet .carousel-items');
         allElement = document.querySelectorAll('.carousel-container-tablet .carousel-item');
         paginationElements = document.querySelectorAll('.carousel-container-tablet .pagination-button');
-    }else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
+    } else if (window.getComputedStyle(document.querySelector('.carousel-container-mobile')).getPropertyValue('display') !== 'none') {
         activeElements = document.querySelectorAll('.carousel-container-mobile .carousel-item.active');
         hiddenElements = document.querySelectorAll('.carousel-container-mobile .carousel-item:not(.active)');
 
